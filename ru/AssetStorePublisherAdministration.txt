@@ -1,0 +1,49 @@
+!Asset Store Publisher Administration
+
+!! Setting up a Publisher account
+
+#Open up the Asset Store and download the latest version of "Asset Store Tools" from the Asset Store (you'll need to sign in, if you haven't done so already).
+
+#Once downloaded and imported to your project, you should see the "Asset Store Tools" menu appear in your Toolbar. Scroll down and click the Package Manager button.
+
+#Now you have the Package Manager open, you can click the link in the top right-hand corner that reads "Publisher account". 
+
+#This will bring up a window that prompts you to create your Publisher Account. You'll need to fill out your Publisher name, Publisher URL, Publisher description (including an email Support address for your packages) and Key images.
+
+#Once you're done, hit Save. Voila, all finished!
+
+
+!!Publisher Administration
+
+Once you have your Publisher Account for the Asset Store setup, you'll be able to log into the Publisher Administration portal, here: https://publisher.assetstore.unity3d.com/
+
+You'll see a number of tabs. Below is a summary of each of these:
+
+*The "Sales" tab allows you to track all purchases made by customers, organised by Package name. Quantity of Sales and Gross Revenue will be shown here, as well as any refunds (if applicable).
+
+*"Free Downloads" allows you track all packages you have published on the Asset Store, for free, much the same as the Sales tab.
+
+*The "Revenue" shows your revenue for any given month since you started selling on the Asset Store. Credits, debits, your balance and recent payouts will be shown here.
+
+*The "Pending" tab will show any outstanding packages you have submitted, that are pending approval from our Vetting Team, before being accepted for sale on the Asset Store.
+
+*If and when a customer needs Support for your package, you can verify they have indeed purchased your package using the "Verify Invoice" tab.
+
+*You can add a number of administrative users (teammates, employees, colleagues) to your master account via the "Users" tab.
+
+*In the "Payout" tab, you will specify how you would like to receive your earnings. You can amend your payout details for the Asset Store at any point.
+
+!!Payouts
+
+There are three options when receiving payouts from the Asset Store.
+
+#Paypal - Free transactions. No minimum transfer. Monthly transfers.\\
+
+#Wire - $20 Transaction fee. Minimum transfer of $250. Quarterly transfers.\\
+
+#Check (US only) - $15 Transaction fee. Minimum transfer of $250. Quarterly transfers.\\
+
+Simply check the appropriate box in the Payout tab and fill out your details.
+
+
+

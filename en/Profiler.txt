@@ -1,0 +1,61 @@
+! Profiler (Pro only)
+
+The Unity Profiler helps you to optimize your game.  It reports for you how much time is spent in the various areas of your game.  For example, it can report the percentage of time spent rendering, animating or in your game logic.
+
+You can play your game in the Editor with Profiling on, and it will record performance data. The Profiler window then displays the data in a timeline, so you can see the frames or areas that spike (take more time) than others. By clicking anywhere in the timeline, the bottom section of the Profiler window will display detailed information for the selected frame.
+
+Note that profiling has to ''instrument'' your code.  This instrumentation has a small impact on the performance of your game.  Typically this overhead is small enough to not affect the game framerate.  When using profiling it is typical to consider only the ratio (or percentage) of time spent in certain areas.  Also, to improve performance focus on those parts of the game that consume the most time.  Compare profiling results before and after code changes and determine the improvements you measure.  Sometimes changes you make to improve performance might have a negative effect on frame rate; unexpected consequences of code optimization should be expected.
+
+(:tocportion:)
+
+!! See Also
+
+* [[OptimizingGraphicsPerformance | Optimizing Graphics Performance]] page.
+
+
+!! Webplayer
+For webplayer profiling, follow these steps:
+# Check the ''Development Build'' and ''Autoconnect Profiler'' checkboxes in Unity's Build Settings dialog before starting the build.
+# When the game is running in the webplayer, make sure that ''Release Channel'' (on the context menu) is set to ''Development''.
+# Select ''OSXWebPlayer(YOURCOMPUTERNAME)'' or ''WindowsWebPlayer(YOURCOMPUTERNAME)'' as appropriate from the Profiler Window's ''Active Profiler'' drop-down menu.
+
+>>ios<<
+!! iOS
+Remote profiling can be enabled on iOS devices by following these steps:
+# Connect your iOS device to your WiFi network (local/adhoc WiFi network is used by profiler to send profiling data from device to the Unity Editor). 
+# Check "Autoconnect Profiler" checkbox in Unity's build settings dialog. 
+# Attach your device to your Mac via cable and hit "Build & Run" in Unity Editor.
+# When app launches on device open profiler window in Unity Editor (Window->Profiler)
+
+If you are using a firewall, you need to make sure that ports 54998 to 55511 are open in the firewall's outbound rules - these are the ports used by Unity for remote profiling.
+
+__Note:__ Sometimes Unity Editor might not autoconnect to the device. In such cases profiler connection might be initiated from Profiler Window ``Active Profiler`` drop down menu by select appropriate device.
+>><<
+
+>>android<<
+!! Android
+Remote profiling can be enabled on Android devices through two different paths : WiFi or [[ http://developer.android.com/guide/developing/tools/adb.html | ADB ]].
+
+For WiFi profiling, follow these steps:
+# Make sure to disable Mobile Data on your Android device.
+# Connect your Android device to your WiFi network. 
+# Check the "Autoconnect Profiler" checkbox in Unity's build settings dialog. 
+# Attach your device to your Mac/PC via cable and hit "Build & Run" in Unity Editor.
+# When the app launches on the device, open the profiler window in Unity Editor (Window->Profiler)
+# If the Unity Editor fails to autoconnect to the device, select the appropriate device from the Profiler Window ``Active Profiler`` drop down menu.
+__Note:__ The Android device and host computer (running the Unity Editor) must both be on the same [[ http://en.wikipedia.org/wiki/Subnetwork | subnet ]] for the device detection to work.
+
+For ADB profiling, follow these steps:
+* Attach your device to your Mac/PC via cable and make sure ADB recognizes the device (i.e. it shows in ''adb devices'' list).
+* Check the "Development Build" checkbox in Unity's build settings dialog, and hit "Build & Run".
+* When the app launches on the device, open the profiler window in Unity Editor (Window->Profiler)
+* Select the ''AndroidProfiler(ADB@127.0.0.1:54999)'' from the Profiler Window ``Active Profiler`` drop down menu.
+__Note:__ The Unity editor will automatically create an adb tunnel for your application when you press "Build & Run".
+If you want to profile another application or you restart the adb server you have to setup this tunnel manually. To do this, open a Terminal window / CMD prompt and enter
+->@@adb forward tcp:54999 localabstract:Unity-<insert bundle identifier here>@@
+
+__Note:__ The entry in the drop down menu is only visible when the selected target is Android.
+
+If you are using a firewall, you need to make sure that ports 54998 to 55511 are open in the firewall's outbound rules - these are the ports used by Unity for remote profiling.
+
+>><<

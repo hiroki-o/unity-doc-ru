@@ -1,0 +1,20 @@
+! Mesh Renderer
+
+The $$Mesh Renderer$$ takes the geometry from the [[class-MeshFilter|Mesh Filter]] and renders it at the position defined by the object's [[class-Transform|Transform]] component.
+
+Attach:InspectorMeshRend35.png
+
+!!Properties
+
+||PROPS
+||``Cast Shadows`` (Pro only) ||If enabled, this $$Mesh$$ will create shadows when a shadow-creating [[class-Light | Light]] shines on it ||
+||``Receive Shadows`` (Pro only) ||If enabled, this Mesh will display any shadows being cast upon it ||
+||``Materials`` ||A list of $$Materials$$ to render model with ||
+||``Use Light Probes`` (Pro only)||Enable probe-based lighting for this mesh||
+||``Anchor Override`` (Pro only)||A $$Transform$$ used to determine the interpolation position when the light probe system is used||
+
+!!Details
+
+Meshes imported from 3D packages can use multiple [[Materials|Materials]]. All the materials used by a Mesh Renderer are held in the Materials list. Each submesh will use one material from the materials list. If there are more materials assigned to the Mesh Renderer than there are submeshes in the mesh, the first submesh will be rendered with each of the remaining materials, one on top of the next. At a cost of performance, this will let you set up multi-pass rendering on that submesh. Fully opaque materials, however, will simply overwrite the previous layers, costing performance for no advantage.
+
+A mesh can receive light from the $$light probe$$ system if the ``Use Light Probes`` option is enabled (see the [[LightProbes|light probes]] manual page for further details). A single point is used as the mesh's notional position for light probe interpolation. By default, this is the centre of the mesh's bounding box, but you can override this by dragging a $$Transform$$ to the ``Anchor Override`` property. It may be useful to set the anchor in cases where an object contains two adjoining meshes; since each mesh has a separate bounding box, the two will be lit discontinuously at the join by default. However, if you set both meshes to use the same anchor point, they will be consistently lit.

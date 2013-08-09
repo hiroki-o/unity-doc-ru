@@ -1,0 +1,69 @@
+!Mecanim FAQ
+
+!!General questions
+
+
+__We are using the legacy animation system for character animations. Should use Mecanim instead?__
+
+Mecanim is the main animation technology that will be used and developed by Unity from now on. The legacy system will not be updated significantly.
+
+
+
+!!Import
+
+__Why is an Animator added automatically to every mesh as it is imported?__
+	
+Currently there is no way for you to change the default import settings but if you set the Rig to ''None'' in the import settings then the Animator component will not be added - you can do this with several files at once
+
+
+!!Layers
+
+
+__Does the ordering of the layers matter?__
+
+Yes. Layers are evaluated from top to bottom in order. Layers set to ''override'' will always override the previous layers (based on their mask, if they have a mask)
+
+
+__Is the base layer weight always supposed to be one or should the weight be set to zero when another synced layer is run?__
+
+The base layer weight is always 1 but layers set to ''override'' will completely override the base layer.
+
+
+__What happens if a synced layer has a different length to the corresponding state in the base layer?__
+
+If layers have different lengths then they will become unsynchronised. 
+
+
+__Is there any way to get a variable value from the controller without using the name string?__
+
+You can use integers to identify the states and parameters. Use the [[ScriptRef:Animator.StringToHash.html|Animator.StringToHash]] function to get the integer identifier values.  For example:
+
+[@runState = Animator.StringToHash("Base Layer.Run");
+animator.SetBool(runState, false);@]
+
+
+!!Avatars and body Masks
+
+
+__Is there a way to define what bones should be part of a body mask?__
+
+Due to implementation details, this is currently not possible.
+
+
+__Is there a way to create AvatarIKGoals other than LeftFoot, RightFoot, LeftHand, RightHand?__
+
+This feature is planned for a future release.
+
+
+!!Animations curves and events
+
+__Can you add animation events to Mecanim?__
+
+This is high in our priorities for future development. For the time being, we suggest using additional animation curves to simulate events approximately. Although this technique doesn't recreate events exactly, many of our users have reported it as useful.
+
+
+__How do animations that have Curves blend with those that don't?__
+
+When you have an animation with a curve and another animation without a curve, Unity will use the default value of the parameter connected to the curve to do blending. 
+You can set default values for your parameters, so when blending takes place between a State that has a ''Curve'' Parameter and one that does not have one, it will blend between the curve value and the default parameter value.
+To set a default value for a Parameter, simply set its value in the Animator Tool window while not in LiveLink.

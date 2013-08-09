@@ -1,0 +1,6 @@
+!Animation State Machines
+
+It is common for a character to have several different animations that correspond to different actions it can perform in the game. For example, it may breathe or sway slightly while idle, walk when commanded to and raise its arms in panic as it falls from a platform. Controlling when these animations are played back is potentially quite a complicated scripting task. Mecanim borrows a computer science concept known as a $$state machine$$ to simplify the control and sequencing of a character's animations. This section gives further details about Mecanim's state machines and explains how to use them.
+
+(:tocportion:)
+

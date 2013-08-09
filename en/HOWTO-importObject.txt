@@ -1,0 +1,32 @@
+! How do I import Models from my 3D app?
+
+To import a 3D model into Unity you can drag a file into the project window.
+
+In the inspector > Model tab
+Unity supports importing models from most popular 3D applications.
+
+(:include 3D-formats:)
+
+For pages on importing specifically from 3D packages see these pages:
+
+* [[HOWTO-ImportObjectMaya|Maya]]
+* [[HOWTO-ImportObjectCinema4D|Cinema 4D]]
+* [[HOWTO-ImportObjectMax|3ds Max]]
+* [[HOWTO-ImportObjectCheetah3D|Cheetah3D]]
+* [[HOWTO-ImportObjectModo|Modo]]
+* [[HOWTO-importObjectLightwave|Lightwave]]
+* [[HOWTO-ImportObjectBlender|Blender]]
+
+!!Textures
+
+* Store textures in a folder called $$Textures$$ next to the exported mesh within your unity project. This will enable Unity to find the Texture and automatically connect the Texture to the generated Material. For more information, see the [[class-Texture2D|Textures]] reference.
+
+(:include 3D-formats:)
+
+(:include FBXImporter-Model:)
+
+!!See Also
+* [[Modeling Optimized Characters]]
+* [[HOWTO-bumpmap | How do I use normal maps?]]
+* [[class-Mesh | Mesh Import Settings]]
+* [[HOWTO-FixZAxisIsUp | How do I fix the rotation of an imported model?]]
