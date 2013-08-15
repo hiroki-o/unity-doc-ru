@@ -5,6 +5,7 @@ The $$Audio Distortion Filter$$ distorts the sound from an [[class-AudioSource|A
 Attach:AudioDistortionFilter.png\\
 ''The Audio Distortion Pass filter properties in the inspector.''
 
+now its fixed!
 
 !! Properties
 
