@@ -470,6 +470,11 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ****[[class-RenderTexture]]
 ****[[class-TextAsset]]
 ****[[class-Texture2D]]
+>>u43<<
+****[[class-Texture2D43]]
+>><<
+***[[comp-2DGroup]]
+****[[class-SpriteRenderer]]
 ***[[comp-AudioGroup]]
 ****[[class-AudioListener]]
 ****[[class-AudioSource]]
